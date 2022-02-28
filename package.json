@@ -1,0 +1,21 @@
+{
+  "name": "generator-exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "generators",
+    "index.js"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "yeoman-generator": "^5.6.1"
+  }
+}

@@ -1,18 +1,14 @@
-import {INode} from "./interface";
+import Node from './node'
 
-type QueueItem = {node: Exclude<INode<number>, null>, hasLeft: boolean}
+type QueueItem<T> = {node: Node<T>, hasLeft: boolean}
 
-export function buildTree(data: Array<number | null>): INode<number> {
+export function buildTree<T>(data: Array<T | null>): Node<T> | null {
   if (!data.length || !data[0]) {
     return null
   }
-  const root = {
-    val: data[0],
-    left: null,
-    right: null,
-  }
-  const nonEmptyNodeQueue: QueueItem[] = []
-  let preNonEmptyNode: QueueItem | undefined = {
+  const root = new Node(data[0], data[0])
+  const nonEmptyNodeQueue: QueueItem<T>[] = []
+  let preNonEmptyNode: QueueItem<T> | undefined = {
     node: root,
     hasLeft: false,
   }
@@ -29,7 +25,7 @@ export function buildTree(data: Array<number | null>): INode<number> {
       }
       continue
     }
-    const node = { val, left: null, right: null }
+    const node = new Node(val, val)
     const item = { node, hasLeft: false }
     if (preNonEmptyNode.hasLeft) {
       nonEmptyNodeQueue.unshift(item)
@@ -44,9 +40,9 @@ export function buildTree(data: Array<number | null>): INode<number> {
   return root
 }
 
-export function printTree(tree: INode<number>): string {
-  const queue: INode<number>[] = [tree]
-  const values: Array<number | 'null'> = []
+export function printTree<T>(tree: Node<T> | null): string {
+  const queue: Array<Node<T> | null> = [tree]
+  const values: Array<T | 'null'> = []
   while (queue.length > 0) {
     let node = queue.pop()
     if (!node) {

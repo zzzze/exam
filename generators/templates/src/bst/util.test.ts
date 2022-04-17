@@ -1,4 +1,4 @@
-import {buildTree, printTree} from "./utils"
+import { buildTree, printTree } from "./utils"
 
 test('buildTree + printTree', () => {
   expect(printTree(buildTree([1, 2]))).toBe('[1,2]')

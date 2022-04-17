@@ -1,4 +1,4 @@
-import { buildTree } from "../utils"
+import { buildTree } from "@/bst/utils"
 import postorder from './postorder-traversal'
 
 const testCases = [{

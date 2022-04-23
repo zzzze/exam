@@ -20,7 +20,9 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('**/*'),
       this.destinationRoot(this.options.appName),
-      { options: this.options }
+      { options: this.options },
+      {},
+      { globOptions: { ignore: ['**/coverage/**', '**/node_modules/**']} },
     );
   }
   install() {

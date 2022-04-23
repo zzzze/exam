@@ -1,4 +1,4 @@
-import { buildTree } from "@/bst/utils"
+import { buildTree } from "../../utils"
 import preorder from './preorder-traversal'
 
 const testCases = [{

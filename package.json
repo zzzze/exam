@@ -7,7 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "generators",
+    "generators/templates/src",
+    "generators/templates/jest.config.ts",
+    "generators/templates/package-lock.json",
+    "generators/templates/package.json",
+    "generators/templates/README.md",
+    "generators/templates/tsconfig.json",
     "index.js"
   ],
   "keywords": [
